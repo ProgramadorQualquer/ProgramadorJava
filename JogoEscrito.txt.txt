@@ -1,0 +1,186 @@
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        Scanner in = new Scanner(System.in);
+
+        String nome;
+        int vida = 20;
+      
+        System.out.println("Seja bem-vindo Jogador, Por favor, Insira o seu nome: ");
+        nome = in.nextLine();
+        System.out.println("Seja muito bem-vindo " + nome);
+        pausa(1000);
+        System.out.println("Deseja avançar para frente ou para trás?");
+        String comando = in.nextLine();
+
+        if (comando.equals("frente")) {
+            System.out.println("Você está andando para frente!");
+            pausa(1000);
+
+            System.out.println("Você encontrou um inimigo de nível baixo! Deseja atacar ou recuar?");
+            comando = in.nextLine();
+
+            if (comando.equals("atacar")) {
+                System.out.println("Você atacou!");
+                pausa(1000);
+                System.out.println("Inimigo se esquivou!");
+                pausa(1000);
+                System.out.println("Inimigo ataca!");
+                vida -= 10;
+                pausa(1000);
+                System.out.println("Você perdeu 10 de vida!");
+                pausa(1000);
+
+                System.out.println("Você deseja comer a maçã mágica para recuperar vida? (sim ou não)");
+                comando = in.nextLine();
+                if (comando.equals("sim")) {
+                    vida += 10;
+                    System.out.println("Você recupera 10 de vida, agora você tem " + vida + " de vida!");
+                    pausa(1000);
+                    System.out.println("Deseja atacar novamente? ( sim ou não )");
+                    comando = in.nextLine();
+                    if (comando.equals("sim")) {
+                        System.out.println("Você atacou e tirou 50 de vida do inimigo!");
+                        pausa(1000);
+                        System.out.println("Inimigo morre!");
+                        pausa(1000);
+                        System.out.println("Deseja continuar andando? ( sim ou não )");
+                        comando = in.nextLine();
+                        if (comando.equals("sim")) {
+                            System.out.println("Você está andando para frente!");
+                            pausa(1000);
+                            System.out.println("Você encontrou uma espada mágica");
+                            pausa(1000);
+                            System.out.println("Deseja coletar espada mágica? ( sim ou não )");
+                            comando = in.nextLine();
+                            if (comando.equals("sim")) {
+                                System.out.println("Você coletou espada mágica!");
+                                pausa(1000);
+                                System.out.println("EM BREVE...");
+                                pausa(1000);
+                            } else if (comando.equals("não")) {
+                                System.out.println("Você deixou a espada mágica para trás e continuou andando!");
+                                pausa(1000);
+                                        System.out.println("EM BREVE...");
+                                pausa(1000);
+                            }
+
+                        } else if (comando.equals("não")) {
+                            System.out.println("Você parou de andar!");
+                            pausa(1000);
+                            System.out.println("Nada acontece!");
+                            pausa(1000);
+                            System.out.println("Fim de jogo...");
+                        }
+                    }else if(comando.equals("não")) {
+                    	System.out.println("Você não faz nada!");
+                    	pausa(1000);
+                    	System.out.println("Inimigo te ataca!");
+                    	pausa(1000);
+                    	System.out.println("Inimigo te mata!");
+                    	pausa(1000);
+                    	System.out.println("GAME OVER");
+                    }
+                } else if (comando.equals("não")) {
+                    System.out.println("Você está sangrando muito, Deseja comer a maçã mágica?");
+                    pausa(1000);
+                    comando = in.nextLine();
+                    if (comando.equals("não")) {
+                        System.out.println("Você morre!");
+                        pausa(1000);
+                        System.out.println("GAME OVER");
+                    } else if (comando.equals("sim")) {
+                        System.out.println("Você comeu maçã mágica!");
+                        pausa(1000);
+                        System.out.println("Você recuperou 10 de vida!");
+                        pausa(1000);
+                        System.out.println("Deseja continuar andando? ( sim ou não )");
+                        comando = in.nextLine();
+                        if (comando.equals("sim")) {
+                            System.out.println("Você está andando!");
+                            pausa(1000);
+                            System.out.println("Você encontrou um inimigo arqueiro!");
+                            pausa(1000);
+                            System.out.println("Deseja atacar ou recuar?");
+                            comando = in.nextLine();
+                            if (comando.equals("atacar")) {
+                                System.out.println("Você atacou!");
+                                pausa(1000);
+                                System.out.println("Seu ataque tirou 5 de vida do inimigo!");
+                                pausa(1000);
+                                System.out.println("Inimigo se prepara para atacar!");
+                                pausa(1000);
+                                System.out.println("Inimigo ataca!");
+                                pausa(1000);
+                                System.out.println("Inimigo te mata!");
+                                pausa(1000);
+                                System.out.println("GAME OVER");
+                            } else if (comando.equals("recuar")) {
+                                System.out.println("Você recuou!");
+                                pausa(1000);
+                                System.out.println("Inimigo te atacou pelas costas!");
+                                pausa(1000);
+                                System.out.println("Você morreu!");
+                                pausa(1000);
+                                System.out.println("GAME OVER");
+                            }
+                        } else if (comando.equals("não")) {
+                            System.out.println("Você parou de andar!");
+                            pausa(1000);
+                            System.out.println("Nada acontece!");
+                            pausa(1000);
+                            System.out.println("Fim de jogo...");
+                        }
+                    }
+                }
+            } else if (comando.equals("recuar")) {
+                System.out.println("Você recuou! ");
+                pausa(1000);
+                System.out.println("Inimigo te atacou pelas costas!");
+                pausa(1000);
+                System.out.println("Você morreu!");
+                pausa(1000);
+                System.out.println("GAME OVER");
+            }
+        } else if (comando.equals("trás")) {
+            System.out.println("Você esta andando para trás!");
+            pausa(1000);
+            System.out.println("Você encontrou um inimigo elétrico!");
+            pausa(1000);
+            System.out.println("Deseja atacar ou recuar?");
+            comando = in.nextLine();
+            if (comando.equals("atacar")) {
+                System.out.println("Você ataca!");
+                pausa(1000);
+                System.out.println("Inimigo se esquivou");
+                pausa(1000);
+                System.out.println("Inimigo ataca com magia elétrica!");
+                pausa(1000);
+                System.out.println("Você morreu");
+                pausa(1000);
+                System.out.println("GAME OVER");
+            } else if (comando.equals("recuar")) {
+                System.out.println("Inimigo corre atrás de você!");
+                pausa(1000);
+                System.out.println("Inimigo te alcança!");
+                pausa(1000);
+                System.out.println("Inimigo usa magia elétrica!");
+                pausa(1000);
+                System.out.println("Você morre!");
+                pausa(1000);
+                System.out.println("GAME OVER");
+            }
+        }
+    }
+
+    private static void pausa(int milissegundos) {
+        try {
+            Thread.sleep(milissegundos);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
